@@ -1,0 +1,1 @@
+savedcmd_/home/msnp/Desktop/linux_5.4_rpi3_drivers/HELLO_WORLD/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/msnp/Desktop/linux_5.4_rpi3_drivers/HELLO_WORLD/Module.symvers -T /home/msnp/Desktop/linux_5.4_rpi3_drivers/HELLO_WORLD/modules.order -i Module.symvers -e 
