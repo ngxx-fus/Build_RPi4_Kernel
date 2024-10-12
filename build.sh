@@ -10,12 +10,8 @@ source ./resources/Support_Functions.sh
 printf "${LIGHT_YELLOW}Clear screen... ${NORMAL}"
 sleep 1s
 clear;
-# check_sshpass_neofetch;
 
-# password=""
-# read -s -p "Enter your password: " password
-
-printf "\n${LIGHT_YELLOW}\nHost informations: ${NORMAL}"
+printf "\n${LIGHT_YELLOW}\nHost informations: ${NORMAL}\n"
 sudo neofetch
 
 printf "${LIGHT_YELLOW}\nTarget informations: ${NORMAL}"
@@ -27,16 +23,16 @@ printf "\n\n"
 
 printf "${LIGHT_YELLOW}\nAnnouncement:${NORMAL}"
 printf "\n${__01}\n"
-printf "${LIGHT_RED}m\nInstall the build dependencies:\n${NORMAL}"
+printf "${LIGHT_RED}\nInstall the build dependencies:\n${NORMAL}"
 yes_or_no;
 
 # Update, Upgrade
-printf "${LIGHT_GREEN}Force run: ${BOLD} update, upgrade${NORMAL}\n"
+printf "\n${LIGHT_GREEN}Force run: ${BOLD} update, upgrade${NORMAL}\n"
 sudo apt update -y
 sudo apt upgrade -y
 
 # Install sshpass + neofetch
-printf "\e[92m\nForce install: ${BOLD}sshpasss, neofetch${NORMAL}\n"
+printf "\n${LIGHT_GREEN}Force install: ${BOLD}sshpasss, neofetch${NORMAL}\n"
 sudo apt install sshpass -y
 sudo apt install  neofetch -y
 
@@ -49,14 +45,14 @@ printf "\n${LIGHT_YELLOW}Installing \e[1mthe 64-bit toolchain to build a 64-bit 
 sudo apt install crossbuild-essential-arm64 -y
 
 # Check for continue? 
-printf "${LIGHT_RED}m\nBuild configuration\n${NORMAL}"
+printf "${LIGHT_RED}\nBuild configuration\n${NORMAL}"
 yes_or_no;
 
 # Check is 'linux' folder cloned? 
 skip_clone_linux_repo=0
 if [ -d "linux" ]; then
     # 'linux' folder has cloned? 
-    printf "\n${LIGHT_RED}mError$/{NORMAL}: \e[1m\"linux\"${NORMAL} has existed!"
+    printf "\n${LIGHT_RED}Error$/{NORMAL}: \e[1m\"linux\"${NORMAL} has existed!"
     # Ask for *delete* or *skip cloning* 
     printf "\nDo you want to remove it?\n"
     if [ $(get_yes_or_no) -eq 1 ];
@@ -69,6 +65,7 @@ if [ -d "linux" ]; then
 fi
 
 
+# Clone 'linux' folder
 if [ $skip_clone_linux_repo -eq 0 ]
 then
     printf "\n${LIGHT_YELLOW}Wait 5-seconds before Cloning ${BOLD}raspberrypi/linux${NORMAL}\n"
@@ -77,18 +74,29 @@ then
     git clone --depth=1 --branch ${BRANCH} https://github.com/raspberrypi/linux
 fi
 
+# Jump into 'linux' folder
 printf "${LIGHT_YELLOW}Jumping into ${BOLD}./linux${NORMAL}\n"
 cd ./linux
 
+# Run config
 printf "${LIGHT_YELLOW}Wait 5-seconds before starting open ${BOLD}menu-config${NORMAL}\n"
 printf "${LIGHT_YELLOW}NOTE:${NORMAL} You can config in the ${BOLD}menu-config${NORMAL} to make the kernel for yourself.\n"
 sleep 5s
 KERNEL=kernel8
+
+# Run default config
+printf "${LIGHT_GREEN}Set up default config (bcm2711_defconfig)${NORMAL}\n"
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- bcm2711_defconfig
+
+# Run default config
+printf "${LIGHT_GREEN}Set up more features (via  menu-config)${NORMAL}\n"
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- menuconfig
 
+# Build kernel
 printf "${LIGHT_YELLOW}Wait 5-seconds before starting ${BOLD}build kernel${NORMAL}\n"
-
+printf "\n${LIGHT_BLUE}By default, we use ${BOLD}$CORES cores${NORMAL}${LIGHT_BLUE} to run make to build the kernel!${NORMAL}\n"
+printf "${LIGHT_BLUE}To change this setting, edit ${BOLD}CORES=${NORMAL}${LIGHT_BLUE} in ${BOLD}resource/Cores.sh ${NORMAL}\n"
+yes_or_no;
 printf "${LIGHT_YELLOW}CORES=$CORES${NORMAL}\n"
 make -j${CORES} ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image modules dtbs
 

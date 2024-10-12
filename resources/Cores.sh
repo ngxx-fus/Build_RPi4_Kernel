@@ -1,3 +1,3 @@
 #!/bin/bash
-CORES=4
+CORES=8
 # :v

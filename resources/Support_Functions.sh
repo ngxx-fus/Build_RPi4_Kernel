@@ -1,17 +1,23 @@
 #!/bin/bash
 #################################### function declaration ####################################
 yes_or_no(){
+    if [ $1="-n" ];then
+        printf '\n'
+    fi 
     while true; do
         read -n 1 -p "[Y/n]:" yn
         case $yn in
             [Yy]* ) break;;
             [Nn]* ) exit;;
-            * ) printf "Please answer correct form!\n";;
+            * ) printf "\nPlease answer correct form!\n";;
         esac
     done
 }
 
 get_yes_or_no(){
+    if [ $1="-n" ];then
+        printf '\n'
+    fi
     while true; do
         read -n 1 -p "[Y/n]:" yn
         case $yn in
