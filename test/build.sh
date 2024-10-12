@@ -27,8 +27,6 @@ printf "\n\n"
 
 printf "${LIGHT_YELLOW}\nAnnouncement:${NORMAL}"
 printf "\n${__01}\n"
-exit 0
-################################### debug ######################################
 printf "${LIGHT_RED}m\nInstall the build dependencies:\n${NORMAL}"
 yes_or_no;
 
@@ -99,5 +97,6 @@ make -j${CORES} ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image modules dtbs
 
 # printf "\n${LIGHT_YELLOW}You must \e[1mmanually copy${NORMAL} kernel into you SDcard!${NORMAL}\n"
 
-# printf "\e[92m\n\n----------------- Done! -----------------\n\n${NORMAL}"
+printf "\e[92m\n\n----------------- Done! -----------------\n\n${NORMAL}"
 
+################################### debug ######################################
