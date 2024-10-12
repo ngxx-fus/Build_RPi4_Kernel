@@ -1,0 +1,155 @@
+[93mClear screen... [0m[H[2J[3J
+[93m
+Host informations: [0m
+[?25l[?7l[0m[31m[1m            .-/+oossssoo+/-.
+        `:+ssssssssssssssssss+:`
+      -+ssssssssssssssssssyyssss+-
+    .ossssssssssssssssss[37m[0m[1mdMMMNy[0m[31m[1msssso.
+   /sssssssssss[37m[0m[1mhdmmNNmmyNMMMMh[0m[31m[1mssssss/
+  +sssssssss[37m[0m[1mhm[0m[31m[1myd[37m[0m[1mMMMMMMMNddddy[0m[31m[1mssssssss+
+ /ssssssss[37m[0m[1mhNMMM[0m[31m[1myh[37m[0m[1mhyyyyhmNMMMNh[0m[31m[1mssssssss/
+.ssssssss[37m[0m[1mdMMMNh[0m[31m[1mssssssssss[37m[0m[1mhNMMMd[0m[31m[1mssssssss.
++ssss[37m[0m[1mhhhyNMMNy[0m[31m[1mssssssssssss[37m[0m[1myNMMMy[0m[31m[1msssssss+
+oss[37m[0m[1myNMMMNyMMh[0m[31m[1mssssssssssssss[37m[0m[1mhmmmh[0m[31m[1mssssssso
+oss[37m[0m[1myNMMMNyMMh[0m[31m[1msssssssssssssshmmmh[0m[31m[1mssssssso
++ssss[37m[0m[1mhhhyNMMNy[0m[31m[1mssssssssssss[37m[0m[1myNMMMy[0m[31m[1msssssss+
+.ssssssss[37m[0m[1mdMMMNh[0m[31m[1mssssssssss[37m[0m[1mhNMMMd[0m[31m[1mssssssss.
+ /ssssssss[37m[0m[1mhNMMM[0m[31m[1myh[37m[0m[1mhyyyyhdNMMMNh[0m[31m[1mssssssss/
+  +sssssssss[37m[0m[1mdm[0m[31m[1myd[37m[0m[1mMMMMMMMMddddy[0m[31m[1mssssssss+
+   /sssssssssss[37m[0m[1mhdmNNNNmyNMMMMh[0m[31m[1mssssss/
+    .ossssssssssssssssss[37m[0m[1mdMMMNy[0m[31m[1msssso.
+      -+sssssssssssssssss[37m[0m[1myyy[0m[31m[1mssss+-
+        `:+ssssssssssssssssss+:`
+            .-/+oossssoo+/-.[0m
+[20A[9999999D[43C[0m[1m[31m[1mroot[0m@[31m[1mmsnp-X409FA[0m 
+[43C[0m----------------[0m 
+[43C[0m[31m[1mOS[0m[0m:[0m Ubuntu 24.04.1 LTS x86_64[0m 
+[43C[0m[31m[1mHost[0m[0m:[0m VivoBook_ASUSLaptop X409FA_X409FA 1.0[0m 
+[43C[0m[31m[1mKernel[0m[0m:[0m 6.8.0-45-generic[0m 
+[43C[0m[31m[1mUptime[0m[0m:[0m 5 mins[0m 
+[43C[0m[31m[1mPackages[0m[0m:[0m 1999 (dpkg), 20 (flatpak), 16 (snap)[0m 
+[43C[0m[31m[1mShell[0m[0m:[0m bash 5.2.21[0m 
+[43C[0m[31m[1mResolution[0m[0m:[0m 1920x1080, 1366x768[0m 
+[43C[0m[31m[1mDE[0m[0m:[0m GNOME 46.0[0m 
+[43C[0m[31m[1mWM[0m[0m:[0m Mutter[0m 
+[43C[0m[31m[1mWM Theme[0m[0m:[0m Adwaita[0m 
+[43C[0m[31m[1mTheme[0m[0m:[0m Yaru [GTK2/3][0m 
+[43C[0m[31m[1mIcons[0m[0m:[0m Yaru [GTK2/3][0m 
+[43C[0m[31m[1mTerminal[0m[0m:[0m gnome-terminal[0m 
+[43C[0m[31m[1mCPU[0m[0m:[0m Intel i5-8265U (8) @ 3.900GHz[0m 
+[43C[0m[31m[1mGPU[0m[0m:[0m Intel WhiskeyLake-U GT2 [UHD Graphics 620][0m 
+[43C[0m[31m[1mMemory[0m[0m:[0m 2598MiB / 11811MiB[0m 
+
+[43C[30m[40m   [31m[41m   [32m[42m   [33m[43m   [34m[44m   [35m[45m   [36m[46m   [37m[47m   [m
+[43C[38;5;8m[48;5;8m   [38;5;9m[48;5;9m   [38;5;10m[48;5;10m   [38;5;11m[48;5;11m   [38;5;12m[48;5;12m   [38;5;13m[48;5;13m   [38;5;14m[48;5;14m   [38;5;15m[48;5;15m   [m
+
+
+[?25h[?7h[93m
+Target informations: [0m[90m
+CPU:[0m    Broadcom BCM2711[90m
+SDRAM:[0m  4GB LPDDR4-2400[90m
+Kernel:[0m rpi-6.6.y
+
+[93m
+Announcement:[0m
+
+    References:
+        https://www.raspberrypi.com/documentation/computers/linux_kernel.html
+    This script is made in other to build the kernel 
+    for Raspberry Pi 4. Include installing requirement 
+    packages, clone linux.img. This script using cross-
+    compile, which is much quicker than  build locally 
+    on a Raspberry Pi, but requires more setup. During 
+    the intallation, Anytime you want to stop the script, 
+    just spam <ctrl+z>.
+
+[91m
+Install the build dependencies:
+[0m
+
+[92mForce run: [1m update, upgrade[0m
+Hit:1 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:2 https://packages.microsoft.com/repos/edge stable InRelease
+Hit:3 https://packages.microsoft.com/repos/code stable InRelease
+Hit:4 http://vn.archive.ubuntu.com/ubuntu noble InRelease
+Hit:5 http://vn.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:6 http://vn.archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:7 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:8 https://ppa.launchpadcontent.net/neovim-ppa/unstable/ubuntu noble InRelease
+Hit:9 https://ppa.launchpadcontent.net/obsproject/obs-studio/ubuntu noble InRelease
+Reading package lists...
+Building dependency tree...
+Reading state information...
+3 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following packages were automatically installed and are no longer required:
+  libmsgpackc2 libtermkey1 libtree-sitter0 libunibilium4 libvterm0 lua-luv
+  python3-greenlet python3-msgpack python3-pynvim
+Use 'sudo apt autoremove' to remove them.
+Get more security updates through Ubuntu Pro with 'esm-apps' enabled:
+  libcjson1 libavdevice60 ffmpeg libpostproc57 libavcodec60 libavutil58
+  libswscale7 libswresample4 libavformat60 libavfilter9
+Learn more about Ubuntu Pro at https://ubuntu.com/pro
+The following upgrades have been deferred due to phasing:
+  python3-update-manager update-manager update-manager-core
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+
+[92mForce install: [1msshpasss, neofetch[0m
+Reading package lists...
+Building dependency tree...
+Reading state information...
+sshpass is already the newest version (1.09-1).
+The following packages were automatically installed and are no longer required:
+  libmsgpackc2 libtermkey1 libtree-sitter0 libunibilium4 libvterm0 lua-luv
+  python3-greenlet python3-msgpack python3-pynvim
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+neofetch is already the newest version (7.1.0-4).
+The following packages were automatically installed and are no longer required:
+  libmsgpackc2 libtermkey1 libtree-sitter0 libunibilium4 libvterm0 lua-luv
+  python3-greenlet python3-msgpack python3-pynvim
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+
+[93mInstalling [1mbc bison flex libssl-dev make libc6-dev libncurses5-dev[0m
+Reading package lists...
+Building dependency tree...
+Reading state information...
+bc is already the newest version (1.07.1-3ubuntu4).
+bison is already the newest version (2:3.8.2+dfsg-1build2).
+flex is already the newest version (2.6.4-8.2build1).
+libssl-dev is already the newest version (3.0.13-0ubuntu3.4).
+make is already the newest version (4.3-4.1build2).
+libc6-dev is already the newest version (2.39-0ubuntu8.3).
+libncurses-dev is already the newest version (6.4+20240113-1ubuntu2).
+The following packages were automatically installed and are no longer required:
+  libmsgpackc2 libtermkey1 libtree-sitter0 libunibilium4 libvterm0 lua-luv
+  python3-greenlet python3-msgpack python3-pynvim
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+
+[93mInstalling [1mthe 64-bit toolchain to build a 64-bit kernel[0m
+Reading package lists...
+Building dependency tree...
+Reading state information...
+crossbuild-essential-arm64 is already the newest version (12.10ubuntu1).
+The following packages were automatically installed and are no longer required:
+  libmsgpackc2 libtermkey1 libtree-sitter0 libunibilium4 libvterm0 lua-luv
+  python3-greenlet python3-msgpack python3-pynvim
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+[91m
+Build configuration
+[0m
+
+[93mWait 5-seconds before Cloning [1mraspberrypi/linux[0m
+[93mCloning [1mraspberrypi/linux[0m[93m branch=rpi-6.6.y[0m
+[93mJumping into [1m./linux[0m
+[93mWait 5-seconds before starting open [1mmenu-config[0m
+[93mNOTE:[0m You can config in the [1mmenu-config[0m to make the kernel for yourself.
