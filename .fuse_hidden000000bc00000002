@@ -87,7 +87,7 @@ if [ -d "mnt" ]; then
   printf "\n${LIGHT_RED}Error${NORMAL}: ${BOLD}\"mnt\"${NORMAL} has existed!"
   # Ask for *delete* or *skip*
   printf "\nDo you want to remove it and re-create?\n"
-  if [ $(get_yes_or_no) -eq 1 ]; then
+  if [ $get_yes_or_no -eq 1 ]; then
     sudo rm -rf ./mnt
     mkdir ./mnt
     mkdir ./mnt/boot
@@ -102,7 +102,7 @@ else
   mkdir ./mnt/root
 fi
 
-if [ $skip_mount -eq 0 ]; then
+if [ skip_mount -eq 0 ]; then
   printf "\n\n${LIGHT_YELLOW}Mount /dev/$boot_dev at ./mnt/boot${NORMAL}"
   sudo mount /dev/${boot_dev} ./mnt/boot
 
