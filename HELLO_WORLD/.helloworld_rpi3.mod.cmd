@@ -1,1 +1,0 @@
-savedcmd_/home/msnp/Desktop/linux_5.4_rpi3_drivers/HELLO_WORLD/helloworld_rpi3.mod := printf '%s\n'   helloworld_rpi3.o | awk '!x[$$0]++ { print("/home/msnp/Desktop/linux_5.4_rpi3_drivers/HELLO_WORLD/"$$0) }' > /home/msnp/Desktop/linux_5.4_rpi3_drivers/HELLO_WORLD/helloworld_rpi3.mod

@@ -1,4 +1,6 @@
 #!/bin/bash
+
+source ./resources/Announcement.sh
 source ./resources/Cores.sh
 source ./resources/Branch.sh
 source ./resources/Text_Effects.sh
@@ -6,19 +8,12 @@ source ./resources/Support_Functions.sh
 
 #################################### main script ####################################
 printf "${LIGHT_YELLOW}Clear screen... ${NORMAL}"
+sleep 1s
 clear;
 # check_sshpass_neofetch;
 
 # password=""
 # read -s -p "Enter your password: " password
-
-printf "\e[92m\nForce run: ${BOLD} update, upgrade${NORMAL}\n"
-sudo apt update -y
-sudo apt upgrade -y
-
-printf "\e[92m\nForce install: ${BOLD}sshpasss, neofetch${NORMAL}\n"
-sudo apt install sshpass -y
-sudo apt install  neofetch -y
 
 printf "\n${LIGHT_YELLOW}\nHost informations: ${NORMAL}"
 sudo neofetch
@@ -31,26 +26,40 @@ printf "\n\n"
 
 
 printf "${LIGHT_YELLOW}\nAnnouncement:${NORMAL}"
-printf "\n$(cat ./resources/Announcement)\n"
-
+printf "\n${__01}\n"
+exit 0
+################################### debug ######################################
 printf "${LIGHT_RED}m\nInstall the build dependencies:\n${NORMAL}"
 yes_or_no;
 
-printf "\n${LIGHT_YELLOW}Installing \e[1mbc bison flex libssl-dev make libc6-dev libncurses5-dev${NORMAL}\n"
-sudo apt install bc bison flex libssl-dev make libc6-dev libncurses5-dev
-
+# Update, Upgrade
+printf "${LIGHT_GREEN}Force run: ${BOLD} update, upgrade${NORMAL}\n"
 sudo apt update -y
 sudo apt upgrade -y
 
-printf "\n${LIGHT_YELLOW}Installing \e[1mthe 64-bit toolchain to build a 64-bit kernel${NORMAL}\n"
-sudo apt install crossbuild-essential-arm64
+# Install sshpass + neofetch
+printf "\e[92m\nForce install: ${BOLD}sshpasss, neofetch${NORMAL}\n"
+sudo apt install sshpass -y
+sudo apt install  neofetch -y
 
+# Install bc bison flex ...
+printf "\n${LIGHT_YELLOW}Installing \e[1mbc bison flex libssl-dev make libc6-dev libncurses5-dev${NORMAL}\n"
+sudo apt install bc bison flex libssl-dev make libc6-dev libncurses5-dev -y
+
+# Install crossbuild-essential-arm64
+printf "\n${LIGHT_YELLOW}Installing \e[1mthe 64-bit toolchain to build a 64-bit kernel${NORMAL}\n"
+sudo apt install crossbuild-essential-arm64 -y
+
+# Check for continue? 
 printf "${LIGHT_RED}m\nBuild configuration\n${NORMAL}"
 yes_or_no;
 
+# Check is 'linux' folder cloned? 
 skip_clone_linux_repo=0
 if [ -d "linux" ]; then
-    printf "\n${LIGHT_RED}mError${NORMAL}: \e[1m\"linux\"${NORMAL} has existed!"
+    # 'linux' folder has cloned? 
+    printf "\n${LIGHT_RED}mError$/{NORMAL}: \e[1m\"linux\"${NORMAL} has existed!"
+    # Ask for *delete* or *skip cloning* 
     printf "\nDo you want to remove it?\n"
     if [ $(get_yes_or_no) -eq 1 ];
     then
